@@ -5,7 +5,7 @@ from django.shortcuts import render, HttpResponse
 
 def inicio(request):
 
-    return HttpResponse("Inicio")
+    return render(request, "proyectofinalapp/inicio.html")
 
 
 def servicios(request):
@@ -21,3 +21,4 @@ def tienda(request):
 def nosotros(request):
 
     return HttpResponse("nosotros")
+
