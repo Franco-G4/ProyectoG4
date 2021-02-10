@@ -10,15 +10,15 @@ def inicio(request):
 
 def servicios(request):
 
-    return HttpResponse("servicios")
+    return render(request, "proyectofinalapp/servicios.html")
 
 
 def tienda(request):
 
-    return HttpResponse("tienda")
+    return render(request, "proyectofinalapp/tienda.html")
 
 
 def nosotros(request):
 
-    return HttpResponse("nosotros")
+    return render(request, "proyectofinalapp/nosotros.html")
 
