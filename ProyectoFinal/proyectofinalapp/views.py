@@ -22,3 +22,8 @@ def nosotros(request):
 
     return render(request, "proyectofinalapp/nosotros.html")
 
+def contacto(request):
+
+    return render(request, "proyectofinalapp/contacto.html")
+
+
