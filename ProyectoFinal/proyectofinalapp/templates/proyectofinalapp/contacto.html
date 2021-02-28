@@ -1,1 +1,40 @@
 {% extends "proyectofinalapp/principal.html"%}
+
+{% load static %}
+
+{% block content %}
+
+            <h1 class="site-heading text-center text-white d-none d-lg-block">Contáctanos </h1>
+            
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-sm-6">
+                        <form action="/contacto/" method="POST"> {% csrf_token%}
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label text-light">Nombre y Apellido</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Nombre y Apellido" name="Nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label text-light">Correo Electronico</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com" name="Email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label text-light">Asunto</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Asunto" name="Asunto">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label text-light">Mensaje</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                    name="Mensaje"></textarea>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <input type="submit" value="Enviar" class="btn btn-outline-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+{% endblock  %}
