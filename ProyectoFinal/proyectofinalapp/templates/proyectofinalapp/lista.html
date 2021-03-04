@@ -1,0 +1,36 @@
+{% extends "proyectofinalapp/principal.html" %} <!-- se hereda de principal.html nombre navegacion y footer-->
+
+{% load static %} <!--hereda los contenidos de la carpeta static-->
+
+{% block content %}
+
+<h2 style="color:white;">Lista de Posts</h2>
+
+
+
+<ul style="color:white;">
+    {% for persona in personas %}
+    <li>
+      {{ persona.titulo }}, {{ persona.autor }} 
+      <a href="/edit/{{ persona.id}}">Editar</a>
+      <a href="/delete/{{ persona.id }}" 
+          onClick="return confirm('¿Seguro que quieres borrar a {{persona.nombre}}?');">
+            Borrar
+        </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+<hr />
+
+
+
+<a href="/add">Crear Post</a>
+<br/>
+<br/>
+<a href="servicios">Volver a Posts</a>
+<br/>
+<br/>
+<a href="/logout">Cerrar sesión</a>
+
+{% endblock %}

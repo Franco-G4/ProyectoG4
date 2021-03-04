@@ -1,0 +1,25 @@
+{% extends "proyectofinalapp/principal.html" %} <!-- se hereda de principal.html nombre navegacion y footer-->
+
+{% load static %} <!--hereda los contenidos de la carpeta static-->
+
+{% block content %}
+
+<h2 style="color:white;">Crear Post</h2>
+
+<form method="POST" style="color:white;">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Crear</button>
+</form>
+
+<hr />
+
+<a href="/lista">Editar Posts</a>
+<br/>
+<br/>
+<a href="servicios">Volver a Posts</a>
+<br/>
+<br/>
+<a href="/logout">Cerrar sesión</a>
+
+{% endblock %}

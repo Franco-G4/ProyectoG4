@@ -3,42 +3,42 @@
 {% load static %} <!--hereda los contenidos de la carpeta static-->
 
 {% block content %}
-<div class="container px-4">
-    <div class="row justify-content-center">
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{% static 'proyectofinalapp/img/comida1.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div><!-- cierra div col1-->
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{% static 'proyectofinalapp/img/comida2.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div><!-- cierra div col2-->
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{% static 'proyectofinalapp/img/comida3.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div><!-- cierra div col3-->
-    </div><!-- cierra div row-->
-</div><!-- cierra div container-->
+
+
+<h2 style="color:white;">Área para miembros</h2>
+
+<p style="color:white;">
+    Bienvenido <b>{{request.user.username}}</b>, 
+    esta página es exclusiva para usuarios registrados.
+</p>
+
+<ul>
+    {% for item in personas %}
+    
+        <h1 style="color:white;">{{item.titulo}}</h1>
+        <p style="color:white;">{{item.texto}}</p>
+        <img src="{{item.imagen}}" style="width:10%">
+        <p style="color:white;">Direccion: {{item.direccion}}</p>
+        <p style="color:white;">Telefono: {{item.telefono}}</p>
+        <p style="color:white;"><a href="{{item.ubicacion}}" target="_blank">Ubicacion</a></p>
+        <p style="color:white;"><a href="{{item.website}}" target="_blank">WebSite</a></p>
+        <p style="color:white;">{{item.fecha_creacion}}</p>
+        <p style="color:white;">{{item.autor}}</p>
+    <br>
+    
+    {% endfor %}
+  </ul>
+
+
+
+<hr />
+<a href="/add">Crear Post</a>
+<br/>
+<br/>
+<a href="/lista">Editar Posts</a>
+<br/>
+<br/>
+<a href="/logout">Cerrar sesión</a>
+
 
 {% endblock %}
