@@ -4,27 +4,36 @@
 
 {% block content %}
 
-
+<br>
 <ul>
   {% for item in personas %}
-  
-      <h1 style="color:white;">{{item.titulo}}</h1>
-      <p style="color:white;">{{item.texto}}</p>
-      <img src="{{item.imagen}}" style="width:10%">
-      <p style="color:white;">Direccion: {{item.direccion}}</p>
-      <p style="color:white;">Telefono: {{item.telefono}}</p>
-      <p style="color:white;"><a href="{{item.ubicacion}}" target="_blank">Ubicacion</a></p>
-      <p style="color:white;"><a href="{{item.website}}" target="_blank">WebSite</a></p>
-      <p style="color:white;">{{item.fecha_creacion}}</p>
-      <p style="color:white;">{{item.autor}}</p>
-      
+  <div class="container d-block justify-content-center">
+  <div class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <!-- <div class="card" style="width: 18rem; background-color: transparent; border-color: lightsteelblue;"> -->
+          <img src="{{item.imagen}}" style="width:100%" class="intro-img img-fluid mb-3 mb-lg-0 rounded" alt="...">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h3 style="color:white;" class="section-heading mb-4">{{item.titulo}}</h3>
+            <p class="section-heading">{{item.texto}}</p>
+            <p class="section-heading">Direccion: {{item.direccion}}</p>
+            <p class="section-heading">Telefono: {{item.telefono}}</p>
+            <p class="section-heading"><a href="{{item.ubicacion}}" target="_blank">Ubicacion</a></p>
+            <p class="section-heading"><a href="{{item.website}}" target="_blank">WebSite</a></p>
+            <p class="section-heading">{{item.fecha_creacion}}</p>
+            <p class="section-heading">{{item.autor}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
-  
+</div>
   {% endfor %}
 </ul>
+<br>
 
-
-  <!-- Heading -->
+  <!-- Heading
   <section class="page-section clearfix">
     <div class="container">
       <div class="intro">
@@ -43,7 +52,7 @@
     </div>
   </section>
 
-<!--Message -->
+
   <section class="page-section cta ">
     <div class="container ">
       <div class="row">
@@ -60,6 +69,6 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   {% endblock %}
