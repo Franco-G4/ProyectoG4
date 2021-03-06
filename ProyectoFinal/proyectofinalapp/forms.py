@@ -5,4 +5,5 @@ from .models import Persona
 class PersonaForm(ModelForm):
     class Meta:
         model = Persona
-        fields = ['titulo', 'texto', 'direccion','ubicacion','telefono','imagen','website', 'autor']
+        fields = ['titulo', 'texto', 'direccion','ubicacion','telefono','imagen','website']
+        #fields = ['titulo', 'texto', 'direccion','ubicacion','telefono','imagen','website', 'autor']

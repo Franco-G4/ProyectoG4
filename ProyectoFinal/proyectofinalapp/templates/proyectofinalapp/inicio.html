@@ -5,6 +5,25 @@
 {% block content %}
 
 
+<ul>
+  {% for item in personas %}
+  
+      <h1 style="color:white;">{{item.titulo}}</h1>
+      <p style="color:white;">{{item.texto}}</p>
+      <img src="{{item.imagen}}" style="width:10%">
+      <p style="color:white;">Direccion: {{item.direccion}}</p>
+      <p style="color:white;">Telefono: {{item.telefono}}</p>
+      <p style="color:white;"><a href="{{item.ubicacion}}" target="_blank">Ubicacion</a></p>
+      <p style="color:white;"><a href="{{item.website}}" target="_blank">WebSite</a></p>
+      <p style="color:white;">{{item.fecha_creacion}}</p>
+      <p style="color:white;">{{item.autor}}</p>
+      
+  <br>
+  
+  {% endfor %}
+</ul>
+
+
   <!-- Heading -->
   <section class="page-section clearfix">
     <div class="container">

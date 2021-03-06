@@ -1,14 +1,16 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
+from datetime import datetime
 # Create your views here.
 
 
 
 # INICIO ---------------------------------------------------
+from .models import Persona
 def inicio(request):
-
-    return render(request, "proyectofinalapp/inicio.html")
+    persona = Persona.objects.all()
+    return render(request, "proyectofinalapp/inicio.html", {'personas': persona})
 
 
 
@@ -126,27 +128,19 @@ def logout(request):
 
 # ADD -----------------------------------------------------------
 from .forms import PersonaForm
-
 def add(request):
-    # Creamos un formulario vacío
-    form = PersonaForm()
 
-    # Comprobamos si se ha enviado el formulario
-    if request.method == "POST":
-        # Añadimos los datos recibidos al formulario
-        form = PersonaForm(request.POST)
-        # Si el formulario es válido...
+    if request.POST:
+        form= PersonaForm(request.POST)
         if form.is_valid():
-            # Guardamos el formulario pero sin confirmarlo,
-            # así conseguiremos una instancia para manejarla
-            instancia = form.save(commit=False)
-            # Podemos guardarla cuando queramos
+            instancia = form.save(commit=False)  # Commit=False permite editar campos
+            instancia.autor= request.user
+            instancia.fecha_creacion = datetime.now()
             instancia.save()
-            # Después de guardar redireccionamos a la lista
             return redirect('/servicios')
-
-    # Si llegamos al final renderizamos el formulario
-    return render(request, "proyectofinalapp/add.html", {'form': form})
+    else:
+        form= PersonaForm()
+    return render(request, "proyectofinalapp/add.html",  {"form": form})
 
 
 
@@ -177,15 +171,16 @@ def edit(request, persona_id):
 
 
 
+
+
 # LISTA -----------------------------------------------------------
 
-def lista(request):
-    #instancia = Persona.objects.get(id=persona_id)
-    #persona = PersonaForm(instance=instancia)
-    #return render(request, "users/lista.html", {'personas': persona})
-    persona = Persona.objects.all()
-    return render(request, "proyectofinalapp/lista.html", {'personas': persona})
+def lista(request):    
+    if request.user.is_authenticated:
         
+        persona=Persona.objects.all()
+     
+        return render(request, "proyectofinalapp/lista.html", {'personas': persona})
 
 
 

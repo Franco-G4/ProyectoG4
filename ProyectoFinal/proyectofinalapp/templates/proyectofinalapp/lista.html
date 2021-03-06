@@ -8,18 +8,38 @@
 
 
 
-<ul style="color:white;">
+
+
+  <h4 style="color:white;">{{request.user.username}}</h4>
+  
+  <ul style="color:white;">
+
+  
+    
     {% for persona in personas %}
-    <li>
-      {{ persona.titulo }}, {{ persona.autor }} 
-      <a href="/edit/{{ persona.id}}">Editar</a>
-      <a href="/delete/{{ persona.id }}" 
-          onClick="return confirm('¿Seguro que quieres borrar a {{persona.nombre}}?');">
-            Borrar
-        </a>
-    </li>
+      
+      <li>
+        
+          {{ persona.titulo }}
+            
+              <a href="/edit/{{ persona.id}}">Editar</a>
+              <a href="/delete/{{ persona.id }}" 
+                onClick="return confirm('¿Seguro que quieres borrar a {{persona.titulo}} ?');">
+                  Borrar
+              </a>
+            
+      </li>
+     
+      
+      
+   
+
     {% endfor %}
+ 
+  
   </ul>
+
+
 
 <hr />
 

@@ -3,7 +3,8 @@ from django.utils import timezone
 
 
 class Persona(models.Model):
-    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True ) #, blank=True, null=True
+    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True)
+    #autor = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True ) #, blank=True, null=True
     titulo = models.CharField(max_length=200)
     texto = models.TextField()
     direccion=models.CharField(max_length=200, null=True)
