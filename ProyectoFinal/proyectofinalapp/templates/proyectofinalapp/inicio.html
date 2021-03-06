@@ -3,11 +3,23 @@
 {% load static %} <!--hereda los contenidos de la carpeta static-->
 
 {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h1 class="site-heading text-center text-white d-none d-lg-block">
 
-<br>
+        <span class="site-heading-lower">Bienvenidos</span>
+      </h1>
+      <h4><small class="text-muted">En este sitio usted puede mostrar sus productos y mostrar a sus clientes todo sobre usted
+          y lo que tiene para
+          ofrecer</small></h4>
+      <br>
+    </div>
+  </div>
+</div>
 <ul>
   {% for item in personas %}
-  <div class="container d-block justify-content-center">
+  <div class="container d-inline-block justify-content-center">
   <div class="page-section clearfix">
     <div class="container">
       <div class="intro">
