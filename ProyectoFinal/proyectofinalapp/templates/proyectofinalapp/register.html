@@ -7,7 +7,7 @@
 
 <h1 class="site-heading text-center text-white d-none d-lg-block">Registrar Usuario</h1>
 
-<div class="container">
+<div class="container" style="margin: 1rem auto;">
     <div class="row justify-content-md-center">
         <div class="col-sm-6">
             <form action="/register/" method="POST"> {% csrf_token%}
@@ -31,7 +31,7 @@
                 </div>
             </form>
             <hr />
-            <a href="/login">Iniciar sesión</a>
+            <a href="/login"  class="btn btn-outline-primary">Iniciar sesión</a>
         </div>
     </div>  
 </div>

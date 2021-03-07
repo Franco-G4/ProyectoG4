@@ -3,7 +3,7 @@
 {% load static %} <!--hereda los contenidos de la carpeta static-->
 
 {% block content %}
-
+<div class="container" style="margin: 1rem auto;">
 <h2 style="color:white;">Lista de Posts</h2>
 
   <h4 style="color:white;">{{request.user.username}}</h4>
@@ -31,9 +31,9 @@
 <a href="/add" type="button" class="btn btn-warning btn-sm">Crear Post</a>
 <br/>
 <br/>
-<a href="servicios" type="button" class="btn btn-warning btn-sm">Volver a Servicios</a>
+<a href="servicios" type="button" class="btn btn-warning btn-sm">Volver a Posts</a>
 <br/>
 <br/>
-<a href="/logout">Cerrar sesión</a>
-
+<a href="/logout" class="btn btn-warning btn-sm">Cerrar sesión</a>
+</div>
 {% endblock %}

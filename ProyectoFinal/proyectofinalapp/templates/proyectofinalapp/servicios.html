@@ -7,20 +7,27 @@
 
 <h1 class="site-heading text-white d-none d-lg-block">Área para miembros</h1>
 
-
+<div style="justify-content: space-between; margin: 2rem auto;" >
+  <div style="margin: 1rem auto;" class="row justify-content-md-center">
+      <div class="col-sm-4">
 <h4 style="color:white;">
     Bienvenido <b>{{request.user.username}}</b>, 
     esta página es exclusiva para usuarios registrados.
 </h4>
 
   <hr />
-  <a href="/add" type="button" class="btn btn-warning btn-sm">Crear Post</a>
+  <a href="/add" type="button" class="border border-dark btn btn-warning btn-sm">Crear Post</a>
   <br/>
   <br/>
-  <a href="/lista" type="button" class="btn btn-warning btn-sm">Editar Posts</a>
+  <a href="/lista" type="button" class="border border-dark btn btn-warning btn-sm">Editar Posts</a>
   <br/>
   <br/>
-  <a href="/logout">Cerrar sesión</a>
+  <button type="button" class="border border-dark btn btn-warning btn-sm" style=" margin-bottom: 1rem;">
+  <a href="/logout" type="button" style="text-decoration: none; color: black; font-family: Arial, Helvetica, sans-serif;">Cerrar sesión</a>
 
+</button>
+</div>
+</div>
+</div>
 
 {% endblock %}

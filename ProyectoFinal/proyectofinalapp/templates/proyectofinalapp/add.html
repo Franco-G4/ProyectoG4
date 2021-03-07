@@ -8,7 +8,7 @@
 
 <h2 class="site-heading text-center text-white d-none d-lg-block">Crear Post</h2>
 
-<div style="justify-content: space-between; margin: 1rem auto;" class="container border border-dark">
+<div style="justify-content: space-between; margin: 1rem auto;" >
     <div style="margin: 1rem auto;" class="row justify-content-md-center">
         <div class="col-sm-4">
             
@@ -16,16 +16,16 @@
             <form method="POST" style="color:white;">
                 {{ form.as_p }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary btn-sm">Crear</button>
-                <a href="/lista" type="button" class="btn btn-primary btn-sm">Editar Posts</a>
+                <button type="submit" class="border border-primary btn btn-primary btn-sm">Crear</button>
+                <a href="/lista" type="button" class="border border-primary btn btn-primary btn-sm">Editar Posts</a>
             </form>
             </div> 
             
             <div class="d-grid gap-2 d-inline-block">
                 
-                <a href="/servicios" type="button" class="btn btn-warning btn-sm">Volver a Servicios</a>
-                <button type="button" class="border border-danger btn btn-warning btn-sm"><a
-                style="text-decoration: none; color: red;" href="/logout">Cerrar sesión</a></button>
+                <a href="/servicios" type="button" class="border border-dark btn btn-warning btn-sm">Volver a Servicios</a>
+                <button type="button" class="border border-dark btn btn-warning btn-sm"><a
+                style="text-decoration: none; color: black;" href="/logout">Cerrar sesión</a></button>
             </div>
 
         </div>
