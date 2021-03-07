@@ -7,8 +7,8 @@
 
 <h1 class="site-heading text-center text-white d-none d-lg-block">Iniciar sesión</h1>
 
-<div class="container">
-    <div class="row justify-content-md-center">
+<div style="justify-content: space-between; margin: 1rem auto;" class="container">
+    <div style="margin: 1rem auto; padding: 1rem auto;" class="row justify-content-md-center">
         <div class="col-sm-6">
             <form action="/login/" method="POST"> {% csrf_token%}
                 <div class="mb-3">
@@ -26,7 +26,7 @@
                 </div>
             </form>
             <hr />
-            <a href="/register">Registrar usuario</a>
+            <button style="margin-bottom: 1rem;"  type="button" class="btn btn-outline-dark"><a  style="text-decoration: none;" href="/register">Registrar usuario</a></button>
         </div>
     </div>   
 </div>
