@@ -1,24 +1,34 @@
-{% extends "proyectofinalapp/principal.html" %} <!-- se hereda de principal.html nombre navegacion y footer-->
+{% extends "proyectofinalapp/principal.html" %}
+<!-- se hereda de principal.html nombre navegacion y footer-->
 
-{% load static %} <!--hereda los contenidos de la carpeta static-->
+{% load static %}
+<!--hereda los contenidos de la carpeta static-->
 
 {% block content %}
 
-<h2 style="color:white;">Crear Post</h2>
-<br/>
-<form method="POST" style="color:white;">
-    {{ form.as_p }}
-    {% csrf_token %}
-    <br/>
-    <button type="submit" class="btn btn-primary">Crear</button>
-</form>
-<hr />
-<a href="/lista" type="button" class="btn btn-warning btn-sm">Editar Posts</a>
-<br/>
-<br/>
-<a href="/servicios" type="button" class="btn btn-warning btn-sm">Volver a Servicios</a>
-<br/>
-<br/>
-<a href="/logout">Cerrar sesión</a>
+<h2 class="site-heading text-center text-white d-none d-lg-block">Crear Post</h2>
 
+<div style="justify-content: space-between; margin: 1rem auto;" class="container border border-dark">
+    <div style="margin: 1rem auto;" class="row justify-content-md-center">
+        <div class="col-sm-4">
+            
+            <div class="md-6" >
+            <form method="POST" style="color:white;">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary btn-sm">Crear</button>
+                <a href="/lista" type="button" class="btn btn-primary btn-sm">Editar Posts</a>
+            </form>
+            </div> 
+            
+            <div class="d-grid gap-2 d-inline-block">
+                
+                <a href="/servicios" type="button" class="btn btn-warning btn-sm">Volver a Servicios</a>
+                <button type="button" class="border border-danger btn btn-warning btn-sm"><a
+                style="text-decoration: none; color: red;" href="/logout">Cerrar sesión</a></button>
+            </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

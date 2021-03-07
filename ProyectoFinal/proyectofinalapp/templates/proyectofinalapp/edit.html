@@ -1,26 +1,32 @@
-{% extends "proyectofinalapp/principal.html" %} <!-- se hereda de principal.html nombre navegacion y footer-->
+{% extends "proyectofinalapp/principal.html" %}
+<!-- se hereda de principal.html nombre navegacion y footer-->
 
-{% load static %} <!--hereda los contenidos de la carpeta static-->
+{% load static %}
+<!--hereda los contenidos de la carpeta static-->
 
 {% block content %}
 
+<h2 class="site-heading text-center text-white d-none d-lg-block">Editar Post</h2>
+
+<div style="justify-content: space-between; margin: 1rem auto;" class="container border border-light">
+    <div style="margin: 1rem auto; padding: 1rem auto;" class="row justify-content-md-center">
+        <div class="col-sm-6">
 
 
-    <h2 style="color:white;">Editar Post</h2>
-    <br/>
-    <form method="POST" style="color:white;">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <br/>
-        <button type="submit" class="btn btn-primary">Editar</button>
-    </form>
-    <hr/>
-    <a href="/lista" type="button" class="btn btn-warning btn-sm">Listar Posts</a>
-    <br/>
-    <br/>
-    <a href="/logout">Cerrar sesión</a>
+            <form method="POST" style="color:white;">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <br />
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </form>
+            <div class="d-grid gap-2 d-inline-block">
+                <a href="/lista" type="button" class="btn btn-warning btn-sm">Listar Posts</a>
 
-
+                <a href="/logout" type="button" class="btn btn-warning btn-sm">Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
