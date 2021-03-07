@@ -5,19 +5,18 @@
 {% block content %}
 
 <h2 style="color:white;">Crear Post</h2>
-
+<br/>
 <form method="POST" style="color:white;">
     {{ form.as_p }}
     {% csrf_token %}
-    <button type="submit">Crear</button>
+    <br/>
+    <button type="submit" class="btn btn-primary">Crear</button>
 </form>
-
 <hr />
-
-<a href="/lista">Editar Posts</a>
+<a href="/lista" type="button" class="btn btn-warning btn-sm">Editar Posts</a>
 <br/>
 <br/>
-<a href="/servicios">Volver a Servicios</a>
+<a href="/servicios" type="button" class="btn btn-warning btn-sm">Volver a Servicios</a>
 <br/>
 <br/>
 <a href="/logout">Cerrar sesión</a>

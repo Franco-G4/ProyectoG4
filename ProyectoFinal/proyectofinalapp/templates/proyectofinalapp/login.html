@@ -5,15 +5,31 @@
 {% block content %}
 
 
-<h2 style="color:white;">Iniciar sesión</h2>
+<h1 class="site-heading text-center text-white d-none d-lg-block">Iniciar sesión</h1>
 
-<form method="POST", style="color:white;">
-    {{ form.as_p }}
-    {% csrf_token %}
-    <button type="submit">Login</button>
-</form>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-6">
+            <form action="/login/" method="POST"> {% csrf_token%}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-light">Username</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Username" name="username">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-light">Password</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Password" name="password">
+                </div>
+                <div class="d-grid gap-2">
+                    <input type="submit" value="Login" class="btn btn-outline-primary">
+                </div>
+            </form>
+            <hr />
+            <a href="/register">Registrar usuario</a>
+        </div>
+    </div>   
+</div>
 
-<hr />
-<a href="/register">Registrar usuario</a>
 
 {% endblock %}

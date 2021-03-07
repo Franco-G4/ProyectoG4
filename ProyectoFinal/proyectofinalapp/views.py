@@ -178,7 +178,7 @@ def edit(request, persona_id):
 def lista(request):    
     if request.user.is_authenticated:
         
-        persona=Persona.objects.all()
+        persona=Persona.objects.filter(autor=request.user)
      
         return render(request, "proyectofinalapp/lista.html", {'personas': persona})
 

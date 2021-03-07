@@ -6,49 +6,32 @@
 
 <h2 style="color:white;">Lista de Posts</h2>
 
-
-
-
-
   <h4 style="color:white;">{{request.user.username}}</h4>
-  
   <ul style="color:white;">
 
   
-    
     {% for persona in personas %}
       
       <li>
         
           {{ persona.titulo }}
             
-              <a href="/edit/{{ persona.id}}">Editar</a>
-              <a href="/delete/{{ persona.id }}" 
+              <a href="/edit/{{ persona.id}}" type="button" class="btn btn-outline-success btn-sm">Editar</a>
+              <a href="/delete/{{ persona.id }}" type="button" class="btn btn-outline-danger btn-sm"
                 onClick="return confirm('¿Seguro que quieres borrar a {{persona.titulo}} ?');">
                   Borrar
               </a>
             
       </li>
      
-      
-      
-   
-
     {% endfor %}
- 
-  
+
   </ul>
-
-
-
 <hr />
-
-
-
-<a href="/add">Crear Post</a>
+<a href="/add" type="button" class="btn btn-warning btn-sm">Crear Post</a>
 <br/>
 <br/>
-<a href="servicios">Volver a Posts</a>
+<a href="servicios" type="button" class="btn btn-warning btn-sm">Volver a Posts</a>
 <br/>
 <br/>
 <a href="/logout">Cerrar sesión</a>

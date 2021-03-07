@@ -7,16 +7,15 @@
 
 
     <h2 style="color:white;">Editar Post</h2>
-
+    <br/>
     <form method="POST" style="color:white;">
         {{ form.as_p }}
         {% csrf_token %}
-        <button type="submit">Editar</button>
+        <br/>
+        <button type="submit" class="btn btn-primary">Editar</button>
     </form>
-
-    <hr />
-
-    <a href="/lista">Listar Posts</a>
+    <hr/>
+    <a href="/lista" type="button" class="btn btn-warning btn-sm">Listar Posts</a>
     <br/>
     <br/>
     <a href="/logout">Cerrar sesión</a>

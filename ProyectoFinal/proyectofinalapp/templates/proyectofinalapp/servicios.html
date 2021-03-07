@@ -5,28 +5,21 @@
 {% block content %}
 
 
-<h2 style="color:white;">Área para miembros</h2>
+<h1 class="site-heading text-white d-none d-lg-block">Área para miembros</h1>
 
-<p style="color:white;">
+
+<h4 style="color:white;">
     Bienvenido <b>{{request.user.username}}</b>, 
     esta página es exclusiva para usuarios registrados.
-</p>
-
-
-
-
+</h4>
 
   <hr />
-  <a href="/add">Crear Post</a>
+  <a href="/add" type="button" class="btn btn-warning btn-sm">Crear Post</a>
   <br/>
   <br/>
-
-
-  <a href="/lista">Editar Posts</a>
+  <a href="/lista" type="button" class="btn btn-warning btn-sm">Editar Posts</a>
   <br/>
   <br/>
-
-
   <a href="/logout">Cerrar sesión</a>
 
 
