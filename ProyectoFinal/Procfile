@@ -1,0 +1,1 @@
+gunicorn ProyectoFinal.wsgi --log-file -
