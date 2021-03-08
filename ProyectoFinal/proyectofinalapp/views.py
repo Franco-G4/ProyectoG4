@@ -39,7 +39,7 @@ def contacto(request):
         recipient_list=["pruebasvariasprogramacion@gmail.com"]
         send_mail(subject, message, email_from, recipient_list)
 
-        return render(request, "proyectofinalapp/carrusel.html")
+        return render(request, "proyectofinalapp/contacto.html")
 
     return render(request, "proyectofinalapp/contacto.html")
 
@@ -179,7 +179,7 @@ def lista(request):
     if request.user.is_authenticated:
         
         persona=Persona.objects.filter(autor=request.user)
-     
+    
         return render(request, "proyectofinalapp/lista.html", {'personas': persona})
 
 
