@@ -3,47 +3,59 @@
 {% load static %} <!--hereda los contenidos de la carpeta static-->
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
-      <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-lower">Bienvenidos</span>
+    <div class="col-md-12">
+      <h1 class="site-heading text-center text-white d-lg-block" style="margin: 1rem 0;">
+        Bienvenidos
       </h1>
-      <div class="col-md-3 d-inline">
-      <h4><small  style="color:white;">En este sitio usted puede mostrar sus productos y contar a sus clientes todo sobre usted
-          y lo que tiene para
-          ofrecer</small></h4>
       <br>
     </div>
-    </div>
+    <!-- <div class="col-md-3 d-inline "> -->
+    <h3 style="margin: 1rem 0;color:white; text-align: center;">
+        
+        En este sitio usted puede mostrar sus productos y contar a
+        sus clientes todo sobre usted
+        y lo que tiene para
+        ofrecer
+      
+    </h3>
+    <br>
+
   </div>
 </div>
+<!-- </div> -->
+<!--container titulo y texto-->
 <ul>
   {% for item in personas %}
-  <div style="margin: 0.5rem;" class="container d-inline-block justify-content-center border border-light">
-  <div class="page-section clearfix">
-    <div class="container">
-      <div class="intro">
-        <!-- <div class="card" style="width: 18rem; background-color: transparent; border-color: lightsteelblue;"> -->
-          <img src="{{item.imagen}}" style="width:100%" class="intro-img img-fluid mb-3 mb-lg-0 rounded" alt="...">
-          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-            <h3 style="color:white;" class="section-heading mb-4">{{item.titulo}}</h3>
-            <p class="section-heading">{{item.texto}}</p>
-            <p class="section-heading">Direccion: {{item.direccion}}</p>
-            <p class="section-heading">Telefono: {{item.telefono}}</p>
-            <p class="section-heading"><a href="{{item.ubicacion}}" target="_blank">Ubicacion</a></p>
-            <p class="section-heading"><a href="{{item.website}}" target="_blank">WebSite</a></p>
-            <p class="section-heading">{{item.fecha_creacion}}</p>
-            <p class="section-heading">{{item.autor}}</p>
-          </div>
-        </div>
+  <div style="margin: 0 5rem;" class="container d-inline-block border border-light">
+    <div class="page-section clearfix">
+      <!-- <div class="container">
+      <div class="intro"> -->
+      <!-- <div class="card" style="width: 18rem; background-color: transparent; border-color: lightsteelblue;"> -->
+      <img src="{{item.imagen}}" style="width: 100%; margin: 0 0;"
+        class="intro-img img-fluid mb-3 mb-lg-0 rounded border border-light" alt="...">
+      <div class="intro-text left-0 text-center p-5 rounded border border-light"
+        style="color: azure; text-align: center;">
+        <h3 style="color:white;" class="section-heading mb-4">{{item.titulo}}</h3>
+        <p class="section-heading">{{item.texto}}</p>
+        <p class="section-heading">Direccion: {{item.direccion}}</p>
+        <p class="section-heading">Telefono: {{item.telefono}}</p>
+        <p class="section-heading"><a href="{{item.ubicacion}}" target="_blank">Ubicacion</a></p>
+        <p class="section-heading"><a href="{{item.website}}" target="_blank">WebSite</a></p>
+        <p class="section-heading">{{item.fecha_creacion}}</p>
+        <p class="section-heading">{{item.autor}}</p>
       </div>
+      <br>
     </div>
+    <!-- </div>
+    </div> -->
+    
   </div>
-  <br>
-</div>
+  <hr noshade="noshade" size="2" width="80%">
   {% endfor %}
 </ul>
+
 <br>
 
   <!-- Heading
